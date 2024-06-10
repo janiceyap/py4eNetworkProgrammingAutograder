@@ -13,9 +13,15 @@ soup = BeautifulSoup(html, "html.parser")
 
 # Retrieve all of the anchor tags
 tags = soup('span')
+sum = 0
+count = 0
 for tag in tags:
     # Look at the parts of a tag
-    print('TAG:', tag)
-    print('URL:', tag.get('href', None))
-    print('Contents:', tag.contents[0])
-    print('Attrs:', tag.attrs)
+    # print('TAG:', tag)
+    # print('URL:', tag.get('href', None))
+    # print('Contents:', tag.contents[0])
+    # print('Attrs:', tag.attrs)
+    count = count + 1
+    sum = sum + int(tag.contents[0])
+
+print("finally:", sum)
